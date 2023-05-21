@@ -17,6 +17,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+    path("", views.all, name="all"),
     path("all", views.all, name="all"),
     path("delinquents", views.delinquents, name="delinquents"),
 ]
