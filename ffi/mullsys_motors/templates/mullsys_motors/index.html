@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'mullsys_motors/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'mullsys_motors/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'mullsys_motors/w3.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'mullsys_motors/bootstrap-5.0.2/css/bootstrap.css' %}">
+    <script src="{% static 'mullsys_motors/bootstrap-5.0.2/js/bootstrap.js' %}"></script>
+    <script src="{% static 'mullsys_motors/jquery-3.6.0.js' %}"></script>
+    <script src="{% static 'mullsys_motors/scripts.js' %}"></script>
+<html>
+    <head>
+    </head>
+    <body>
+        <center>
+        <div>
+            {% load static %}
+            <img id="icon" src="{% static 'mullsys_motors/banner.png' %}">
+            <hr style="color: white;">
+            <h1 style="color: white;">Current Rentals</h1>
+            <div>
+                <a href="/all"><button class="w3-btn w3-round">Show All</button></a>
+                <a href="/delinquents"><button class="w3-btn w3-round">Show Delinquents</button></a>
+            </div>
+            {% if rentals_list %}
+                <div class="scroll">
+                    <table>
+                        <th>
+                            <td>Vehicle</td>
+                            <td>Date and Cost</td>
+                            <td>Contact</td>
+                            <td>Status</td>
+                        </th>
+                        {% for rental in rentals_list %}
+                            <tr>
+                                <td style="color: white;">ID:  {{ rental.rental_id }}</td>
+                            </tr>
+                            <tr>&NoBreak;</tr>
+                            <tr>
+                                <td>{{ rental.customer_first_name }} {{ rental.customer_last_name }}</td>
+                                <td>{{ rental.vehicle_make }} {{ rental.vehicle_model }} ({{ rental.vehicle_vin }})</td>
+                                <td>{{ rental.rental_start_date }} {{ rental.rental_duration }} days at ${{ rental.rental_day_rate }}</td>
+                                <td>{{ rental.customer_email }}</td>
+                                {% if rental.paid == "Chase Them Down!" %}
+                                    <td style="color: red;">{{ rental.paid }}</td>
+                                {% else %}
+                                    <td>{{ rental.paid }}</td>
+                                {% endif %}
+                            </tr>
+                    {% endfor %}
+                    </table>
+                </div>
+            {% else %}
+                <p>No rentals are available.</p>
+            {% endif %}
+        </div>
+    </center>
+    </body>
+</html> 
