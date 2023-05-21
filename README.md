@@ -4,7 +4,7 @@ by Graeme Muller
 ![](example.png)
 
 * Utilises Python + Django for backend
-* Django Forms, HTML, CSS for fronend
+* Django Forms, HTML, CSS for frontend
 
 
 ### Improvments

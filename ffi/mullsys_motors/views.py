@@ -8,7 +8,7 @@ from mullsys_motors.models import Rental
 def read_data():
     """Read in all the MOCK_DATA entries, create Rental objects from each and save in DB."""
     Rental.objects.all().delete()  # For the testers so they don't double up each run.
-    with open("../data/MOCK_DATA.csv", newline="\r\n") as csv_file:  # Hard coded because easier
+    with open("mullsys_motors/MOCK_DATA.csv", newline="\r\n") as csv_file:  # Hard coded because easier
         mock_data_reader = csv.reader(csv_file)
         for row in mock_data_reader:
             try:

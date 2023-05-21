@@ -1,0 +1,4 @@
+id,customer_first_name,customer_last_name,customer_email,vehicle_vin,vehicle_make,vehicle_model,rental_start_date,rental_duration,rental_day_rate,status
+1,Odella,Bowshire,obowshire0@exblog.jp,WBABD33404J391290,Ford,ZX2,10/27/2022,1,162.48,paid
+2,Alex,Gatherell,agatherell1@elpais.com,JTMHY7AJ5B5656504,Chevrolet,G-Series 1500,5/19/2022,14,124.75,unpaid
+3,Fanni,Duinbleton,fduinbleton2@wufoo.com,JM1NC2SF9F0325197,Toyota,Tundra,12/28/2022,5,176.32,unpaid
