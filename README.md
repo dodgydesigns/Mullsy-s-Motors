@@ -15,7 +15,7 @@ by Graeme Muller
 5. Use your browser to navigate to "127.0.0.1:8000"
 6. Have heaps of great fun!
 
-### Improvments
+### Improvements
 * Employ Redux to store data in the browser - speed/efficiency
 * Employ VUE.js as frontend framework - smoother feel
 * Only update the table data rather than reloading the whole page

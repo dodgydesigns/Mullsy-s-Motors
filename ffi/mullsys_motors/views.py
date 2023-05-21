@@ -35,7 +35,7 @@ def read_data():
                 continue
 
 
-def all(request):
+def initial(request):
     """ """
     read_data()
     all_rentals = Rental.objects.all()
@@ -45,9 +45,17 @@ def all(request):
     return render(request, "mullsys_motors/index.html", context)
 
 
+def all(request):
+    """ """
+    all_rentals = Rental.objects.all()
+    context = {
+        "rentals_list": list(all_rentals.values()),
+    }
+    return render(request, "mullsys_motors/index.html", context)
+
+
 def delinquents(request):
     """ """
-    read_data()
     delinquent_rentals = Rental.objects.filter(paid="Chase Them Down!")
     context = {
         "rentals_list": list(delinquent_rentals.values()),
